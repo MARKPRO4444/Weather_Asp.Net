@@ -1,0 +1,20 @@
+﻿@using Weather_Asp.Net.Controllers
+
+@model WeatherJson
+
+<form class="text-center" action="Weather">
+    <h1 class="display-4">Weather</h1>
+    <input name="lat" type="text" class="text-hide" placeholder="lat" />
+    <input name="lon" type="text" class="text-hide" placeholder="lon" />
+    <input name="answer" type="submit" />
+    @if (Model.Day != null)
+    {
+        <p>
+            date: @Model.Day.Options[0].Dt_txt
+        </p>
+        <p>
+            temperature: @Model.Day.Options[0].Main.Temp
+        </p>
+    }
+</form>
+
